@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
-import{useNavigate} from "react-router-dom"
+import React, { useState,useEffect } from "react";
+import{useNavigate,useParams} from "react-router-dom"
 
-const Adduser = () => {
+const Edit = () => {
   let navigate=useNavigate();
+  const {id}=useParams();
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -16,12 +17,21 @@ const Adduser = () => {
   };
    const onSubmit=async (e)=>{
   e.preventDefault();
-  await axios.post("http://localhost:3001/users",user);
+  await axios.put("http://localhost:3001/users",user);
   navigate("/");
 }
+useEffect(() => {
+    loaduser();
+}, [])
+
+const loaduser=async()=>{
+const result=await axios.get(`http://localhost:3001/users/${id}`);
+setUser(result.data);
+}
   return (
-    <div className="adduser col-6 m-5 card p-5 bg-primary text-white">
-      <form onSubmit={e=>onSubmit(e)}>
+  <div className="adduser col-6 m-5 card p-5 bg-primary text-white">
+    <form onSubmit={e=>onSubmit(e)}>
+        <center><h1>Edituser</h1></center>
         <div>
           <label>Name</label>
           <br />
@@ -62,7 +72,7 @@ const Adduser = () => {
         </div>
         <br />
         <div>
-          <label>Phone</label>
+          <label>phone</label>
           <br />
           <input 
           className="input-email" 
@@ -77,7 +87,8 @@ const Adduser = () => {
         <button className="btn btn-dark">submit</button>
       </form>
     </div>
+    
   );
 };
 
-export default Adduser;
+export default Edit;
