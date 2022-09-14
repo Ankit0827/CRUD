@@ -17,6 +17,7 @@ const Adduser = () => {
         Submit
       </Button>
     </Form>
+    console.log(Adduser);
 </div>
     );
 };
