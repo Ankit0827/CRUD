@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import{useNavigate} from "react-router-dom"
+import{useNavigate} from "react-router-dom";
+import '../css/Adduser.css'
 
 const Adduser = () => {
   let navigate=useNavigate();
@@ -22,8 +23,9 @@ const Adduser = () => {
   return (
     <div className="adduser col-6 m-5 card p-5 bg-primary text-white">
       <form onSubmit={e=>onSubmit(e)}>
+        <center><h1>Adduser</h1></center>
         <div>
-          <label>Name</label>
+          <label className="lable">Name</label>
           <br />
           <input
             className="input-Name"
@@ -36,7 +38,7 @@ const Adduser = () => {
         </div>
         <br />
         <div>
-          <label className="">Username</label>
+          <label className="lable">Username</label>
           <br />
           <input
             className="input-Name"
@@ -49,10 +51,10 @@ const Adduser = () => {
         </div>
         <br />
         <div>
-          <label>Email</label>
+          <label className="lable">Email</label>
           <br />
           <input 
-          className="input-email" 
+          className="input-Name" 
           type="email" 
           placeholder="Email"
           name="email"
@@ -62,10 +64,10 @@ const Adduser = () => {
         </div>
         <br />
         <div>
-          <label>Phone</label>
+          <label className="lable">Phone</label>
           <br />
           <input 
-          className="input-email" 
+          className="input-Name" 
           type="text" 
           placeholder="Address" 
           name="phone"
@@ -74,7 +76,7 @@ const Adduser = () => {
           />
         </div>
         <br></br>
-        <button className="btn btn-dark">submit</button>
+        <button className="btn1">submit</button>
       </form>
     </div>
   );

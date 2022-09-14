@@ -62,7 +62,7 @@ setUser(result.data);
           <label>Email</label>
           <br />
           <input 
-          className="input-email" 
+          className="input-Name" 
           type="email" 
           placeholder="Email"
           name="email"
@@ -75,7 +75,7 @@ setUser(result.data);
           <label>phone</label>
           <br />
           <input 
-          className="input-email" 
+          className="input-Name" 
           type="text" 
           placeholder="Address" 
           name="phone"

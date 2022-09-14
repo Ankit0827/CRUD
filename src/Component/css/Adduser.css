@@ -1,0 +1,14 @@
+.input-Name{
+    width: 100%;
+    border-radius: 5px;
+}
+.btn1{
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+.lable{
+    font-weight: 700;
+   font-size: larger;
+}
