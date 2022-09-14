@@ -14,6 +14,10 @@ useEffect(() => {
        const result = await axios.get("http://localhost:3001/users");
       setUser(result.data.reverse());
   };
+  const deleteuser=async id=>{
+    await axios.delete(`http://localhost:3001/users/${id}`);
+    loadUser();
+  }
   return (
     <div className="table">
        <Table striped  hover>
@@ -34,8 +38,8 @@ useEffect(() => {
         <td>{user.email}</td>
         <td>{user.phone}</td>
          <td>
-          <Link className="btn btn-outline-primary  m-1" to="/user/Edit">Edit</Link>
-          <button className="btn btn-outline-danger">Delete</button>
+          <Link className="btn btn-outline-primary  m-1" to={`/user/Edit/${user.id}`}>Edit</Link>
+          <button className="btn btn-outline-danger" onClick={()=>deleteuser(user.id)}>Delete</button>
          </td>
       </tr>
       )

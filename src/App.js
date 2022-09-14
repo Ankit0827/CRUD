@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/Contact" element={<Contact />}></Route>
             <Route exact path="/Adduser" element={<Adduser />}></Route>
             <Route exact path="/user/Edit/:id" element={<Edit />}></Route>
-            <Route exact path="*" element={<Pagenotfound />}></Route>
+            <Route exact path="*" element={<Pagenotfound/>}></Route>
           </Routes>
         </div>
       </Router>

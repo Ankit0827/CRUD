@@ -17,7 +17,7 @@ const Edit = () => {
   };
    const onSubmit=async (e)=>{
   e.preventDefault();
-  await axios.put("http://localhost:3001/users",user);
+  await axios.put(`http://localhost:3001/users/${id}`,user);
   navigate("/");
 }
 useEffect(() => {
@@ -84,7 +84,7 @@ setUser(result.data);
           />
         </div>
         <br></br>
-        <button className="btn btn-dark">submit</button>
+        <button className="btn btn-warning">Update</button>
       </form>
     </div>
     
